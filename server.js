@@ -43,10 +43,10 @@ app.get('/api/:date',(req,res)=>{
     })
   }
 })
-app.get('/api/',(req,res)=>{
+app.get('/api',(req,res)=>{
   res.json({
-    unix: new Date.valueOf(),
-    utc: new Date.toUTCString()
+    unix: new Date().valueOf(),
+    utc: new Date().toUTCString()
   })
 })
 
