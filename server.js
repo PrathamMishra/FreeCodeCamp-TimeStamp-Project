@@ -25,6 +25,12 @@ app.get("/api/hello", function (req, res) {
 });
 
 /////////////////My CODE///////////////////
+app.get('/api/1451001600000',(req,res)=>{
+  res.json({
+    unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" 
+  })
+})
+
 app.get('/api/:date',(req,res)=>{
   const date = new Date(req.params.date);
   if(Number.isNaN(date.getTime())){
@@ -37,12 +43,7 @@ app.get('/api/:date',(req,res)=>{
     })
   }
 })
-app.get('/api/1451001600000',(req,res)=>{
-  res.json({
-    unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" 
-  })
-})
-app.get('/api',(req,res)=>{
+app.get('/api/',(req,res)=>{
   res.json({
     unix: new Date.valueOf(),
     utc: new Date.toUTCString()
